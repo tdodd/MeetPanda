@@ -1,0 +1,25 @@
+extends layout
+
+//- Homepage
+block content
+   //- Stylesheet
+   link(rel="stylesheet", href="/stylesheets/homepage.css")
+
+   //- Hero Image
+   .hero-container
+      .overlay
+      .hero-img
+
+   //- Panda Logo
+   .logo
+
+   .error-container
+      .error.hidden
+
+   .blurb.blurb-lg Looking for something to do?
+   .blurb.blurb-sm  See what's happening around you
+
+   .btn-container
+      button.btn.btn-main find meetups
+
+   script(src="/javascripts/location.js")

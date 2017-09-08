@@ -1,0 +1,16 @@
+header {
+   height: 150px;
+   position: relative;
+   background: url('../images/hero-sm.jpg');
+   background-size: cover;
+   background-position: center;
+}
+
+.header-text {
+   color: #FFF;
+   font-size: 2em;
+   font-weight: 300;
+   position: absolute;
+   bottom: 3px;
+   left: 160px;
+}

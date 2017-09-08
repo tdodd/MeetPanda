@@ -1,0 +1,52 @@
+.radius-container {
+   padding: 0 8px;
+   margin-top: 20px; 
+   text-align: center;
+}
+
+.radius-inline {
+   display: inline-block;
+   font-size: 1.3em;
+}
+
+
+/* Radius text input */
+.radius {
+   border: 1px solid gray;
+   border-radius: 2px;
+   margin: 0 15px;
+   padding: 10px;
+   text-align: center;
+}
+
+.map-container {
+   padding: 0 8px;
+   margin-bottom: 20px;
+}
+
+.map {
+   border-radius: 5px;
+   width: 750px;
+   height: 350px;
+   margin: 0 auto;
+   box-shadow: 0 2px 4px rgba(0,0,0,.4)
+}
+
+@media screen and (max-width: 800px) {
+   .map {
+      width: auto;
+   }
+}
+
+.btn-container {
+   text-align: center;
+   margin-top: 30px;
+}
+
+.btn-go {
+   background: #F44336;
+}
+
+.btn-go:focus {
+   outline-color: red;
+}

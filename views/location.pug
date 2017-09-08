@@ -1,0 +1,23 @@
+extends layout-header
+
+block location
+   link(rel="stylesheet", href="/stylesheets/location.css")
+
+   form.radius-container#radius-form
+      .radius-inline Show meetups within
+      input.radius-inline.radius#radius(type="text" name="radius" placeholder="Radius" size="5" maxlength="5" value="25")
+      .radius-inline km
+      
+      .btn-container
+         input.btn.btn-go(type="submit" value="go")
+
+   .error-container
+      .error.hidden
+
+   .map-container
+      .map
+
+   script(src="/javascripts/meetup.js")
+   script(src="/javascripts/map.js")
+   script(src="/javascripts/validation.js")
+   script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdA-8bzGZwEVh6JgcMsmuOzFteKaqAN4g&callback=createMap")

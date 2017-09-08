@@ -1,0 +1,95 @@
+.data {
+   padding: 8px;
+}
+
+/* Individual Event */
+.data-element {
+   list-style: none;
+   width: 750px;
+   margin: 0 auto 35px auto;
+   padding-bottom: 10px;
+   background: white;
+   border-radius: 3px;
+   box-shadow: 0 3px 8px 0 rgba(0, 0, 0, 0.2);
+   transition: 0.3s;
+}
+
+@media screen and (max-width: 800px) {
+   .data-element {
+      width: auto;
+   }
+}
+
+.data-element:hover {
+   box-shadow: 0 6px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.meetup-count {
+   color: rgba(0, 0, 0, .7);
+   font-size: 1.2em;
+   margin-left: 5px;
+}
+
+.meetup-name {
+   background: #F44336;
+   text-align: center;
+   padding: 10px;
+   margin-bottom: 15px;
+   border-top-left-radius: 3px;
+   border-top-right-radius: 3px;
+}
+
+.meetup-name a {
+   text-decoration: none;
+   color: white;
+   font-size: 1.6em;
+   border-bottom: 1px dashed lightgray;
+}
+
+.meetup-group {
+   font-size: 1.3em;
+   color: darkgray;
+   margin: 0 0 15px 5px;
+}
+
+.meetup-waitlist {
+   margin: 8px;
+}
+
+.meetup-rsvp-count {
+   margin: 8px;
+}
+
+.meetup-time {
+   font-size: 1.2em;
+}
+
+.meetup-date {
+   margin-left: 6px;
+}
+
+/* Venue */
+.meetup-venue {
+   margin: 8px;
+   color: #F44336;
+}
+
+.meetup-venue-name {
+
+}
+
+.meetup-venue-address {
+}
+
+.meetup-venue-location {
+   
+}
+
+.meetup-venue-city {
+   margin-left: 4px;
+   
+}
+
+.meetup-venue-state {
+   margin-left: 4px;
+}

@@ -1,0 +1,67 @@
+extends layout-header
+
+block meetup
+   link(rel="stylesheet", href="/stylesheets/meetup.css")
+
+   if error
+      .error #{error.message}
+   
+   else if data.length < 1
+      h1.no-meetups No meetups found
+   
+   else
+      .meetup-count #{data.length} meetups within #{radius} km
+
+      ul.data
+         each meetup in data
+            li.data-element
+
+               .data-element-header
+                  //- Event Name and link to meetup page
+                  .meetup-name
+                     a(href="" + meetup.link) #{meetup.name}
+
+               .data-element-body
+                  //- Meetup group name
+                  .meetup-group Hosted by #{meetup.group.name}
+                  
+                  //- Meetup group status (public/private)
+                  if meetup.group.join_mode === "open"
+                     .meetup-group-status This meetup is public
+                  else
+                     .meetup-group-status This meetup is private
+                  
+                  //- Number of people on the waitlist
+                  .meetup-waitlist.inline Waitlist: #{meetup.waitlist_count}
+                  
+                  //- Number of people attending
+                  .meetup-rsvp-count.inline Going: #{meetup.yes_rsvp_count}
+                  
+                  //- Event time
+                  .meetup-time
+                     .inline.underline When:
+                     .inline.meetup-date #{new Date(meetup.time).toDateString()}
+                  
+                  //- Venue Information
+                  if meetup.venue
+                     .meetup-venue
+
+                        //- Venue Name
+                        if meetup.venue.name
+                           .meetup-venue-name #{meetup.venue.name}
+
+                        //- Venue Location
+                        if meetup.venue.address
+                           .meetup-venue-location.inline #{meetup.venue.address}
+                        
+                        //- Venue Address
+                        if meetup.venue.address_1
+                           .meetup-venue-address.inline #{meetup.venue.address_1}, 
+
+                        //- Venue City
+                        if meetup.venue.city
+                           .meetup-venue-city.inline #{meetup.venue.city},
+
+                        //- Venue State/Province
+                        if meetup.venue.state
+                           .meetup-venue-state.inline #{meetup.venue.state}
