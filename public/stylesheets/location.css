@@ -47,6 +47,10 @@
    background: #F44336;
 }
 
+.btn-go:hover {
+   background: #C5372D;
+}
+
 .btn-go:focus {
    outline-color: red;
 }

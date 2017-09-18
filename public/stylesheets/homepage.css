@@ -1,6 +1,7 @@
 /* Header Image Container */
 .hero-container {
    overflow-y: hidden;
+   position: relative;
 }
 
 /* Header Image Overlay */
@@ -22,10 +23,20 @@
    height: 300px;
 }
 
+/* PandaMeet Header Text */
+.hero-text {
+   position: absolute;
+   bottom: 5px;
+   left: 5px;
+   z-index: 3;
+   color: #FFF;
+   font-size: 2em;
+   font-weight: 300;
+}
 
 /* Panda Logo */
 .logo {
-   z-index: 5;
+   z-index: 2;
    width: 200px;
    height: 200px;
    position: relative;
@@ -67,6 +78,10 @@
 
 .btn-main {
    background: #F44336;
+}
+
+.btn-main:hover {
+   background: #C5372D;
 }
 
 .btn-main:focus {

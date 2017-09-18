@@ -29,7 +29,7 @@ router.get('/', (req, res, next) => {
  * @param longitude the user's longitude coord
  */
 router.get('/location', (req, res, next) => {
-   const context = location.get(req.query.latitude, req.query.longitude);
+   const context = location.validateLocation(req.query.latitude, req.query.longitude);
    res.render('location', context);
 });
 
@@ -43,7 +43,7 @@ router.get('/location', (req, res, next) => {
  * @param radius the desired radius
  */
 router.get('/meetup', (req, res, next) => {
-   meetup.get(req.query.radius, req.query.latitude, req.query.longitude)
+   meetup.getMeetups(req.query.radius, req.query.latitude, req.query.longitude)
       .then((context) => res.render('meetup', context))
       .catch((context) => res.render('meetup', context));
 });

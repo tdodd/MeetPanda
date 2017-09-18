@@ -2,13 +2,13 @@
  * Create the Google map widget
  */
 function createMap() {
-   
+
    // Get url query params
    var query = window.location.search.substring(1);
    var params = query.split('&');
    var latitude = parseFloat(params[0].replace('latitude=', ''));
-   var longitude = parseFloat(params[1].replace('=longitude', ''));
-   
+   var longitude = parseFloat(params[1].replace('longitude=', ''));
+
    // Check Coordinates
    if (validateLatitude(latitude) && validateLongitude(longitude)) {
 
@@ -39,7 +39,7 @@ function createMap() {
       // Hide map widget
       var map = document.querySelector('.map');
       map.classList.add('hidden');
-      
+
       // Show error
       var error = document.querySelector('.error');
       error.innerHTML = 'Invalid Location Parameters';
@@ -49,7 +49,7 @@ function createMap() {
 
    // Watch radius text input for changes
    var radius = document.querySelector('#radius');
-   radius.addEventListener('keyup', function() {
+   radius.addEventListener('keyup', function () {
 
       radiusVal = parseInt(radius.value);
 

@@ -6,7 +6,7 @@ const Validation = require('./ValidationController');
 const MeetupController = {
 
    /**
-    * MeetupController.get(radius, latitude, longitude)
+    * MeetupController.getMeetups(radius, latitude, longitude)
     *
     * Get a list of events within a specified radius of a location
     *
@@ -15,7 +15,7 @@ const MeetupController = {
     * @param {float} longitude the lng coordinate
     * @return {Promise} the list of events
     */
-   get: function(radius, latitude, longitude) {
+   getMeetups: function(radius, latitude, longitude) {
 
       // Client context
       let context = {
@@ -38,6 +38,7 @@ const MeetupController = {
                   context.error = {
                      message: 'Something went wrong'
                   };
+                  
                   reject(error);
 
                } else { // No errors, get response body
@@ -59,7 +60,7 @@ const MeetupController = {
 
       });      
 
-   } // end MeetupController.get()
+   } // end MeetupController.getMeetups
 
 };
 

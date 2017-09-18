@@ -3,14 +3,14 @@ const Validation = require('./ValidationController');
 var LocationController = {
 
    /**
-    * LocationController.get(latitude, longitude)
+    * LocationController.validateLocation(latitude, longitude)
     *
-    * Validate latitude and longitude values
+    * Validate latitude and longitude coordinates and return errors if any
     *
     * @param {float} latitude the latitude coord
     * @param {float} longitude the longitude coord
     */
-   get: function(latitude, longitude) {
+   validateLocation: function(latitude, longitude) {
 
       // Client context
       var context = {
@@ -21,14 +21,16 @@ var LocationController = {
 
       // Validate coordinates
       if (!Validation.validateLatitude(latitude) || !Validation.validateLongitude(longitude)) {
-         context.error = {
+
+         context.error = { // Invalid coordinates
             message: 'Invalid coordinates'
          };
+
       }
 
       return context;
 
-   }, // end LocationController.get()
+   }, // end LocationController.validateLocation()
 
 };
 

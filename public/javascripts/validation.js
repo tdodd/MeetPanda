@@ -7,7 +7,7 @@
  * @return {bool} true if the radius is valid and false otherwise
  */
 function validateRadius(r) {
-   return r && !isNaN(r) && r > 0 && r <= 10000;
+   return !isNaN(r) && r > 0 && r <= 1000;
 }
 
 /**
@@ -19,7 +19,7 @@ function validateRadius(r) {
  * @return {bool} true if the latitude is valid and false otherwise
  */
 function validateLatitude(l) {
-   return l && !isNaN(l) && l >= -90 && l <= 90;
+   return !isNaN(l) && l >= -90 && l <= 90;
 }
 
 /**
@@ -31,5 +31,5 @@ function validateLatitude(l) {
  * @return {bool} true if the longitude is valid and false otherwise
  */
 function validateLongitude(l) {
-   return l && !isNaN(l) && l >= -180 && l <= 180;
+   return !isNaN(l) && l >= -180 && l <= 180;
 }

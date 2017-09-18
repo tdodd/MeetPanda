@@ -1,5 +1,4 @@
-
-var ValidationController = {
+const ValidationController = {
 
    /**
     * Validate a radius
@@ -10,7 +9,7 @@ var ValidationController = {
     * @return {bool} true if the radius is valid and false otherwise
     */
    validateRadius: function(r) {
-      return r && !isNaN(r) && r > 0 && r <= 10000;
+      return !isNaN(r) && r > 0 && r <= 1000;
    },
 
    /**
@@ -22,7 +21,7 @@ var ValidationController = {
     * @return {bool} true if the latitude is valid and false otherwise
     */
    validateLatitude: function(l) {
-      return l && !isNaN(l) && l >= -90 && l <= 90;
+      return !isNaN(l) && l >= -90 && l <= 90;
    },
 
    /**
@@ -34,10 +33,9 @@ var ValidationController = {
     * @return {bool} true if the longitude is valid and false otherwise
     */
    validateLongitude: function(l) {
-      return l && !isNaN(l) && l >= -180 && l <= 180;
+      return !isNaN(l) && l >= -180 && l <= 180;
    }
 
 };
-
 
 module.exports = ValidationController;

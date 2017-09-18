@@ -4,7 +4,8 @@ block meetup
    link(rel="stylesheet", href="/stylesheets/meetup.css")
 
    if error
-      .error #{error.message}
+      .error-container
+         .error #{error.message}
    
    else if data.length < 1
       h1.no-meetups No meetups found
@@ -16,10 +17,9 @@ block meetup
          each meetup in data
             li.data-element
 
+               //- Event Name and link to meetup page
                .data-element-header
-                  //- Event Name and link to meetup page
-                  .meetup-name
-                     a(href="" + meetup.link) #{meetup.name}
+                  a(href="" + meetup.link) #{meetup.name}
 
                .data-element-body
                   //- Meetup group name
@@ -44,11 +44,11 @@ block meetup
                   
                   //- Venue Information
                   if meetup.venue
-                     .meetup-venue
+                     .meetup-venue Where:
 
                         //- Venue Name
                         if meetup.venue.name
-                           .meetup-venue-name #{meetup.venue.name}
+                           .meetup-venue-name.inline #{meetup.venue.name},
 
                         //- Venue Location
                         if meetup.venue.address
